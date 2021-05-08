@@ -24,26 +24,26 @@ app.listen(port, ()=>{
 });
 
 
-// // Add headers
-// app.use(function (req, res, next) {
+// Add headers
+app.use(function (req, res, next) {
 
-//     // Website you wish to allow to connect
-//     res.setHeader('Access-Control-Allow-Origin', '127.0.0.1:5500');
+    // Website you wish to allow to connect
+    res.setHeader('Access-Control-Allow-Origin', 'https://wtrco.herokuapp.com');
 
-//     // Request methods you wish to allow
-//     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    // Request methods you wish to allow
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
 
-//     // Request headers you wish to allow
-//     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type', 'origin', 'Authorization');
+    // Request headers you wish to allow
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type', 'origin', 'Authorization');
 
-//     res.setHeader('Access-Control-Allow-Credentials', true);
+    res.setHeader('Access-Control-Allow-Credentials', true);
 
-//     // Pass to next layer of middleware
-//     if ('OPTIONS' == req.method) {
-//       res.sendStatus(200);
-//     }
-//     else {
-//       next();
-//     }});
+    // Pass to next layer of middleware
+    if ('OPTIONS' == req.method) {
+      res.sendStatus(200);
+    }
+    else {
+      next();
+    }});
 
 export default app;
